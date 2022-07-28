@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>ReactJS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+<body>
+    <nav id="navbar">
+		<header><h1>Learn React</h1></header>
+		<ul>
+			<li id="link1"><a class="nav-link" href="#Overview">Overview</a></li>
+			<li id="link2"><a class="nav-link" href="#JSX">JSX</a></li>
+			<li id="link3"><a class="nav-link" href="#React_Components">React Components</a></li>
+			<li id="link4"><a class="nav-link" href="#Components_Interacting">Components Interacting</a></li>
+			<li id="link5"><a class="nav-link" href="#Lifecycle_Methods">Lifecycle Methods</a></li>
+			<li id="link6"><a class="nav-link" href="#Hooks">Hooks</a></li>
+			<li id="link7"><a class="nav-link" href="#Reference">Reference</a></li>
+		</ul>
+    </nav>
+    <main id="main-doc">
+		<section class="main-section" id="Overview">
+			<header><h1>Overview</h1></header>
+			<h3>Why Learn ReactJS?</h3>
+			<p>
+				ReactJS offers graceful solutions to some of front-end programming’s most persistent issues, allowing you to build dynamic and interactive web apps with ease. It’s fast, scalable, flexible, powerful, and has a robust developer community that’s rapidly growing. There’s never been a better time to learn React.
+			</p>
+			<h3>Take-Away Skills:</h3>
+			<p>
+				You’ll develop a strong understanding of React’s most essential concepts: JSX, class and function components, props, state, lifecycle methods, and hooks. You’ll be able to combine these ideas in React’s modular programming style.
+			</p>
+			<h3>Note on Prerequisites:</h3>
+			<p>
+				A strong foundation in JavaScript is a prerequisite for this course, as well as basic HTML.
+			</p>
+		</section>
+		<section class="main-section" id="JSX">
+			<header><h1>JSX</h1></header>
+			<h3>Nested JSX elements</h3>
+			<code>
+				const myClasses = ( <br>&nbsp; &lt;a href="https://www.codecademy.com"&gt; <br>
+				&nbsp;&nbsp; &lt;h1&gt;
+					Sign Up!
+				&lt/h1&gt; <br>
+				&nbsp; &lt;/a&gt;);
+			</code>
+			<p>
+				In order for the code to compile, a JSX expression must have exactly one outermost element. In the below block of code the <code>&lt;a&gt;</code> tag is the outermost element.
+			</p>
+			<p>To continue, view more here:
+				<ul>
+					<li><a href="https://www.codecademy.com/learn/react-101/modules/react-101-jsx-u" target="_blank">Learn to use JSX, the basic syntax of React.js</a></li>
+				</ul>
+			</p>
+		</section>
+		<section class="main-section" id="React_Components">
+			<header><h1>React Components</h1></header>
+			<h3><code>render()</code> Method</h3>
+			<code>
+				class MyComponent extends React.Component { <br>
+				&nbsp;render() { <br>
+				&nbsp;&nbsp; return &lt;h1&gt;Hello from the render     method!&lt;/h1&gt; <br>&nbsp;} <br>}</code>
+				<p>
+					React class components must have a <code>render()</code> method. This method should return some React elements created with JSX.
+				</p>
+			<p>
+				To continue, view more here:
+				<ul>
+					<li>
+						<a href="https://www.codecademy.com/learn/react-101/modules/learn-react-components" target="_blank">Learn to make React Components, the building blocks of all React.js applications.</a>
+					</li>
+				</ul>
+			</p>
+		</section>
+		<section class="main-section" id="Components_Interacting">
+			<header><h1>Components Interacting</h1></header>
+			<h3>Returning HTML Elements and Components</h3>
+			<code>
+				class Header extends React.Component { <br>
+				&nbsp; render() { <br>
+				&nbsp;&nbsp; return ( <br>
+				&nbsp;&nbsp;&nbsp; &lt;div&gt; <br>
+				&nbsp;&nbsp;&nbsp;&nbsp; &lt;Logo /&gt; <br>
+				&nbsp;&nbsp;&nbsp;&nbsp; &lt;h1&gt;Codecademy&lt;/h1&gt; <br>
+				&nbsp;&nbsp;&nbsp; &lt;/div&gt; <br>
+				&nbsp;&nbsp; ); <br>
+				&nbsp; } <br>
+				}
+			</code>
+			<p>
+				A class component’s <code>render()</code> method can return any JSX, including a mix of HTML elements and custom React components. In the example, we return a <code>&lt;Logo /&gt;</code> component and a “vanilla” HTML title.
+				This assumes that <code>&lt;Logo /&gt;</code> is defined elsewhere.
+			</p>
+			<p>To continue, view more here:</p>
+			<ul>
+				<li><a href="https://www.codecademy.com/learn/react-101/modules/learn-react-components-interacting" target="_blank">Learn how to make React components interact with one another.</a></li>
+			</ul>
+		</section>
+		<section class="main-section" id="Lifecycle_Methods">
+			<header><h1>Lifecycle Methods</h1></header>
+			<h3>Unmounting Lifecycle Method</h3>
+			<code>
+			componentWillUnmount(prevProps, prevState) { <br>
+			&nbsp; clearInterval(this.interval); <br>
+			}
+			</code>
+			<p>
+				React supports one unmounting lifecycle method, componentWillUnmount, which will be called right before a component is removed from the DOM.
+				<code>componentWillUnmount()</code> is used to do any necessary cleanup (canceling any timers or intervals, for example) before the component disappears. Note that the <code>this.setState()</code> method should not be called inside <code>componentWillUnmount()</code> because the component will not be re-rendered.
+			</p>
+			<p>To continue, view more here:</p>
+			<ul>
+				<li><a href="https://www.codecademy.com/learn/react-101/modules/react-102-lifecycle-methods-u" target="_blank">Hook actions to specific moments in a component's life.</a></li>
+			</ul>
+		</section>
+		<section class="main-section" id="Hooks">
+			<header><h1>Hooks</h1></header>
+			<h3>Function Components</h3>
+			<code>
+				// The two components below are equivalent. <br>
+				class GreeterAsClass extends React.Component { <br>
+				&nbsp; render() { <br>
+				&nbsp;&nbsp; return &lt;h1&gt;Hello, {this.props.name}!&lt;/h1&gt;; <br>
+				&nbsp; } <br>
+				} <br>
+				function GreeterAsFunction(props) { <br>
+				&nbsp;&nbsp; return &lt;h1&gt;Hello, {props.name}!&lt;/h1&gt;; <br>
+				}
+			</code>
+			<p>
+				In React, you can use a function as a component instead of a class. Function components receive <code>props</code> as a parameter. In the example code, we show two equivalent components: one as a class and one as a function.
+			</p>
+			<p>To continue, view more here:</p>
+			<ul>
+				<li><a href="https://www.codecademy.com/learn/react-101/modules/react-hooks-u" target="_blank">Learn how to use Hooks in React, a powerful feature of function components.</a></li>
+			</ul>
+		</section>
+		<section class="main-section" id="Reference">
+			<header><h1>Reference</h1></header>
+			<ul>
+				<li>
+					The entire stated above is taken from <a href="https://www.codecademy.com/learn/react-101?g_network=g&g_device=c&g_adid=518718871323&g_keyword=react.js&g_acctid=243-039-7011&g_adtype=search&g_adgroupid=126771679424&g_keywordid=aud-726551140688:kwd-312533956528&g_campaign=ROW+Language%3A+Basic+-+Broad&g_campaignid=10947274266&utm_id=t_aud-726551140688:kwd-312533956528:ag_126771679424:cp_10947274266:n_g:d_c&utm_source=google&utm_medium=paid-search&hsa_acc=2430397011&hsa_cam=10947274266&hsa_grp=126771679424&hsa_ad=518718871323&hsa_src=g&hsa_tgt=aud-726551140688:kwd-312533956528&hsa_kw=react.js&hsa_mt=p&hsa_net=adwords&hsa_ver=3&gclid=CjwKCAjw46CVBhB1EiwAgy6M4olWxY_nK1JlNuXRErcBaW_glF-7NhSh2n-_8Syxdv2GiEKJkNv5-xoCq8UQAvD_BwE">Codecademy</a>, visit their page to learn more. 
+				</li>
+			</ul>
+		</section>
+    </main>
+  </body>
+</html>

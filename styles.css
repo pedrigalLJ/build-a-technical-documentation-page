@@ -1,0 +1,49 @@
+body{
+    border: 1px dotted black;
+    display: grid;
+    grid-template-columns: .7fr 1fr;
+    grid-template-areas: "navbar" "main-doc";
+    width: 95%;
+    margin: auto;
+}
+#navbar{
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    box-sizing: border-box;
+}
+@media (max-width: 600px){
+    body{
+      grid-template-columns: 1fr;
+      grid-template-areas: "navbar" "main-doc"
+	}
+	#navbar{
+		position: relative;
+	}
+}
+p{
+    text-align: justify;
+}
+header > h1{
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Verdana, sans-serif;
+}
+.main-section > header h1{
+    color: #2daaa6;
+    text-shadow: 3px 1px 2px black;
+    border: 2px inset #DFF0D8;
+    border-radius: 10px;
+    padding: 10px;
+}
+#navbar > ul li{
+    list-style-type: none;
+    padding: 20px;
+}
+a{
+    text-decoration: none;
+    color: #2DAAA6;
+}
+a:hover{
+    color: #4d3800;
+}
